@@ -1,0 +1,23 @@
+name: Estimate GitHub Actions Cost
+
+on:
+  workflow_run:
+    workflows: riya
+    types:
+      - completed
+
+jobs:
+  estimate-cost:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Estimate cost
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const workflowRun = github.event.workflow_run;
+            const cost = workflowRun.billable;
+            console.log(`Estimated cost for the workflow: $${cost.toFixed(2)}`);
