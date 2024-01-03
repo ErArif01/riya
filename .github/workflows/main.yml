@@ -1,4 +1,4 @@
-name: Estimate GitHub Actions Cost
+name: Your Workflow Name
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  estimate-cost:
+  your-job:
     runs-on: ubuntu-latest
 
     steps:
