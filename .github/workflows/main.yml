@@ -1,9 +1,12 @@
 name: Estimate GitHub Actions Cost
 
 on:
+  push:
+    branches:
+      - main
   workflow_run:
-    workflows: riya
-    types:
+      workflows: riya
+      types:
       - completed
 
 jobs:
